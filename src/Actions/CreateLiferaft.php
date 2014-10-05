@@ -179,6 +179,8 @@ class CreateLiferaft implements Action {
 
 		if ($process->getExitCode() > 0)
 		{
+			$this->progress($process->getErrorOutput());
+
 			sleep(3);
 
 			$this->failed();
